@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validate form không để trống</title>
+</head>
+<body>
+    <form id="registerForm">
+        <input type="text" id="username" placeholder="Tên đăng nhập">
+        <button type="submit">Đăng ký</button>
+    </form>
+    <script>
+        document.getElementById("registerForm").addEventListener("submit", function(e){
+            e.preventDefault()
+            const username = document.getElementById("username").value.trim()
+
+            if (username === "") {
+                alert("Tên đăng nhập không được để trống")
+            }
+            else {
+                alert("Đăng nhập thành công")
+            }
+        }) 
+    </script>
+</body>
+</html>

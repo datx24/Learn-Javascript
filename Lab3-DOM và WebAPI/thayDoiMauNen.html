@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thay đổi màu nền</title>
+</head>
+<body>
+    <!-- Bắt sự kiện click để thay đổi màu nền -->
+    <button id="btnChange">Đổi màu nền</button>
+    <script>
+        document.getElementById("btnChange").addEventListener("click", function () {
+            document.body.style.backgroundColor = getRandomColor()
+        })
+
+        function getRandomColor() {
+            const colors = ["lightblue", "lightgreen", "lightyellow", "pink", "lavender"]
+            return colors[Math.floor(Math.random() * colors.length)]
+        }
+    </script>
+</body>
+</html>

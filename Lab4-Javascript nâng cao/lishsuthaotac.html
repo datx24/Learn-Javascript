@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghi lịch sử thao tác người dùng</title>
+</head>
+<body>
+    <button id="btn">Click tôi</button>
+    <script>
+        const history = JSON.parse(localStorage.getItem("clickHistory")) || []
+        document.getElementById('btn').addEventListener("click", () => {
+            history.push({time: new Date().toLocaleString()})
+            localStorage.setItem("clickHistory", JSON.stringify(history))
+        })
+
+        // Hiển thị log lịch sử click trong console
+        console.log("Lịch sử click:");
+        history.forEach((item, index) => {
+            console.log(`${index + 1}. ${item.time}`);
+        });
+    </script>
+</body>
+</html>

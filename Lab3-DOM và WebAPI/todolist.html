@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todolist</title>
+</head>
+<body>
+    <input type="text" id="todoInput" placeholder="Việc cần làm">
+    <button onclick="addToDo()">Thêm</button>
+    <ul id="todoList"></ul>
+    <script>
+        let todos = JSON.parse(localStorage.getItem("todos")) || []
+        
+        function addToDo() {
+            const input = document.getElementById("todoInput")
+            const value = input.value.trim()
+            if (value) {
+                todos.push(value)
+                localStorage.setItem("todos", JSON.stringify(todos))
+                input.value = "";
+                renderTodos();
+            }
+        }
+
+        function renderTodos() {
+            const list = document.getElementById("todoList")
+            list.innerHTML = ""
+            todos.forEach((todo, index) => {
+                const li = document.createElement("li")
+                li.innerText = todo
+                list.appendChild(li)
+            })
+        }
+    </script>
+</body>
+</html>
