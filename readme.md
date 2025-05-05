@@ -13,7 +13,7 @@
 
 ## 🖼️ Giao Diện Ứng Dụng
 
-<img src="assets/screenshot.png" alt="Ảnh giao diện" width="600"/>
+<img src="https://github.com/datx24/Learn-Javascript/blob/main/Lab4-Javascript%20n%C3%A2ng%20cao/ChuyenDoiTienTe/image.png" alt="Ảnh giao diện" width="600"/>
 
 ---
 
